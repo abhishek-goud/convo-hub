@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-200 -200 800 800">
+  <defs>
+    <linearGradient id="modernGradient">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1d4ed8;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Camera Body -->
+  <g transform="translate(0, -100) rotate(-15, 100, 100)">
+    <rect x="-100" y="-50" width="400" height="300" rx="20" fill="#2563eb" filter="url(#glow)">
+      <animate attributeName="fill" values="#2563eb;#1d4ed8;#2563eb" dur="3s" repeatCount="indefinite"/>
+    </rect>
+    
+    <!-- Lens -->
+    <path d="M300 0 L380 -30 L380 230 L300 200 Z" fill="#1d4ed8">
+      <animate attributeName="fill-opacity" values="0.7;1;0.7" dur="2s" repeatCount="indefinite"/>
+    </path>
+    
+    <!-- Status Lights -->
+    <circle cx="340" cy="45" r="25" fill="#60a5fa">
+      <animate attributeName="r" values="25;35;25" dur="1s" repeatCount="indefinite"/>
+      <animate attributeName="fill-opacity" values="1;0.5;1" dur="1s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="340" cy="100" r="25" fill="#93c5fd">
+      <animate attributeName="r" values="25;35;25" dur="1.2s" repeatCount="indefinite"/>
+      <animate attributeName="fill-opacity" values="1;0.5;1" dur="1.2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="340" cy="155" r="25" fill="#bfdbfe">
+      <animate attributeName="r" values="25;35;25" dur="1.4s" repeatCount="indefinite"/>
+      <animate attributeName="fill-opacity" values="1;0.5;1" dur="1.4s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- Team Indicators -->
+    <g>
+      <circle cx="0" cy="50" r="35" fill="#60a5fa">
+        <animate attributeName="fill-opacity" values="1;0.6;1" dur="1.5s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="80" cy="50" r="35" fill="#93c5fd">
+        <animate attributeName="fill-opacity" values="0.6;1;0.6" dur="1.5s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="160" cy="50" r="35" fill="#bfdbfe">
+        <animate attributeName="fill-opacity" values="1;0.6;1" dur="1.5s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+  </g>
+  
+  <!-- Text Below Logo -->
+  <text x="200" y="400" fill="white" font-family="Inter, sans-serif" font-size="500" font-weight="900" text-anchor="middle">ConvoHub</text>
+</svg>
